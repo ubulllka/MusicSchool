@@ -53,7 +53,7 @@ public class LessonController {
     public ResponseEntity save(@RequestHeader("username") String username, @RequestHeader("token") String token,
                                @RequestBody CreateLesson createLesson) {
         String role = checkRights(new ValidateRequest(username, token));
-        ..        if (!"ADMIN".equals(role) && !lessonSer.checkTeacher(username, role, createLesson.getTeacher_id()))
+        if (!"ADMIN".equals(role) && !lessonSer.checkTeacher(username, role, createLesson.getTeacher_id()))
             return ResponseEntity.status(404).body("You have no rights to perform this operation");
         Lesson lesson;
         try {

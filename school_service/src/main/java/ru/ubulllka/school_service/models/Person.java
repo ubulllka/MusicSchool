@@ -39,7 +39,7 @@ public class Person {
     @Column(name = "username")
     private String username;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "specialization_id", referencedColumnName = "id", nullable = true)
     private Specialization specialization;
 

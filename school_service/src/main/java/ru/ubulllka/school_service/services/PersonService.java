@@ -73,7 +73,7 @@ public class PersonService {
         person.setLastName((updatePerson.getFirstName().isEmpty()) ? person.getLastName() : updatePerson.getLastName());
         person.setFirstName((updatePerson.getFirstName().isEmpty()) ? person.getFirstName() : updatePerson.getFirstName());
         person.setMiddleName((updatePerson.getMiddleName().isEmpty() ? person.getMiddleName() : updatePerson.getMiddleName()));
-        return person;
+        return personRep.save(person);
     }
 
     public boolean delete(String username) {
